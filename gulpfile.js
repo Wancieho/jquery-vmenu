@@ -14,7 +14,7 @@ var license = '/*\n' +
 	' * Description: Mobile friendly jQuery menu dropdown style plugin\n' +
 	' * Author: https://github.com/Wancieho\n' +
 	' * License: MIT\n' +
-	' * Version: 0.1.0\n' +
+	' * Version: 0.2.0\n' +
 	' * Dependancies: jquery-3.*\n' +
 	' */\n';
 
