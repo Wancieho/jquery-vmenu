@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-ZA">
+
+<head>
+    <title>vMenu demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="src/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../dist/js/jquery.vmenu.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                $('.vMenu').vMenu();
+            });
+        })(jQuery);
+    </script>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+        .vMenu {
+            position: relative;
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        .vMenu>a {
+            width: 100%;
+            background: white;
+            border: 1px solid slategray;
+        }
+
+        .vMenu>a:hover {
+            background: #d2d8dd;
+        }
+
+        .vMenu>ul {
+            position: absolute;
+            display: none;
+            width: 140px;
+            background: white;
+            border: 1px solid #d2d8dd;
+        }
+
+        .vMenu>ul ul {
+            display: none;
+        }
+
+        .vMenu>ul>li>a {
+            background: #d2d8dd;
+        }
+
+        .vMenu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .vMenu li {
+            border-top: 1px solid gray;
+        }
+
+        .vMenu a[href="#"] {
+            padding-right: 24px;
+            white-space: nowrap;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAJVJREFUSIntzjEOAUEYgNGn0HIB0TiAxCUUGoVSIhGNS4nEMTiF6DXiAKIjaEyyxVq7a4VivmSa+WfeDLHY31dL2etg/GKW1Q0r7N8dnOJeck3y/mZZAl/kxaGOTQF8/bxTqCZ2OfAtGkXxUBvHDPyAVlk81MM5BT+h+ykeGuCawC/oV4WH5okHZlXjoRGG38JjsR/1AKRiSlAjGl7BAAAAAElFTkSuQmCC');
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        .vMenu a {
+            display: block;
+            padding: 3px;
+            text-decoration: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .vMenu a,
+        .vMenu a:focus {
+            color: black;
+        }
+
+        .vMenu ul a:hover {
+            background-color: #a8b3bd;
+            color: white;
+        }
+
+        .vMenu a.open {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAJpJREFUSIntzr8KgVEch/EPYuUGFLNJuQqD3aCUweKeFLehXISYTbLL5t/ilPSm97yI4X3q2c55vj9ycv6eUuT7PlpYf+EWE1zvjj8d7+H8MHBC91PxDo4P8eAB7XfjDewT4sEd6lnjNWxexIMrVGPjFSxTxIMLlGMG5hHx4DRtfJQhHhw+xwoJA00MUEx70Z0LZthG/svJ+TU3Re5LM9qeXlQAAAAASUVORK5CYII=');
+        }
+
+        div>div {
+            margin-right: 50px;
+        }
+
+        @media (max-width: 767px) {
+            .vMenu>ul {
+                position: relative;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>vDrop demo</h1>
+        <div class="vMenu">
+            <a href="#"></a>
+            <ul>
+                <li class="selected1">
+                    <a href="">All</a>
+                </li>
+                <li>
+                    <a href="#">Cake boards</a>
+                    <ul>
+                        <li>
+                            <a href="">Hardboard</a>
+                        </li>
+                        <li>
+                            <a href="">Softboard</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Tools</a>
+                    <ul>
+                        <li>
+                            <a href="">Dragees</a>
+                        </li>
+                        <li>
+                            <a href="">Piping Nozzles</a>
+                        </li>
+                        <li>
+                            <a href="">Rolling Pins</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Specials</a>
+                </li>
+                <li>
+                    <a href="#">Cake Toppers</a>
+                    <ul>
+                        <li>
+                            <a href="">Perspex</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <p>Lorem ipsum dolor sit amet, duo id doctus delicatissimi, an vix nihil iudico maiestatis, eu harum nihil moderatius
+            his. No eos oblique complectitur, unum recusabo ei quo. Laoreet iracundia splendide ius id, cotidieque dissentiunt
+            in est. Explicari principes evertitur no mei, vis partem graeco invenire te. Vim dicta mentitum cotidieque at,
+            cu soleat persequeris mei.</p>
+    </div>
+</body>
+
+</html>
