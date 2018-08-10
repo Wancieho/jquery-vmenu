@@ -3,7 +3,7 @@
  * Description: Mobile friendly jQuery menu dropdown style plugin
  * Author: https://github.com/Wancieho
  * License: MIT
- * Version: 0.1.0
+ * Version: 0.3.0
  * Dependancies: jquery-3.*
  */
 ; (function ($, window, document, undefined) {
@@ -42,7 +42,13 @@
         });
 
         $(scope.element).children('a').on('click', function () {
-            $(this).siblings('ul').stop(true, true).slideToggle();
+            if (!$(this).hasClass('open')) {
+                $(this).addClass('open');
+            } else {
+                $(this).removeClass('open');
+            }
+
+            $(this).siblings('ul').stop(true).slideToggle();
         });
 
         $(scope.element).find('*').on('click', function (event) {
@@ -54,13 +60,20 @@
         });
 
         $(scope.element).find('li > a').on('click', function () {
-            $(scope.element).children('ul').find('ul').slideUp();
+            var self = $(this);
 
-            $(scope.element).children('ul').find('a').removeClass('open');
+            if ($(this).attr('href') !== '#') {
+                if (!$(this).hasClass('open')) {
+                    $(this).addClass('open');
+                } else {
+                    $(this).removeClass('open');
+                }
+            }
 
-            $(this).siblings('ul').stop(true, true).slideToggle();
+            $(this).siblings('ul').stop(true).slideToggle();
 
-            $(this).addClass('open');
+            if (!scope.allowMultiple) {
+            }
         });
     }
 

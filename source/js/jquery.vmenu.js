@@ -34,7 +34,13 @@
         });
 
         $(scope.element).children('a').on('click', function () {
-            $(this).siblings('ul').stop(true, true).slideToggle();
+            if (!$(this).hasClass('open')) {
+                $(this).addClass('open');
+            } else {
+                $(this).removeClass('open');
+            }
+
+            $(this).siblings('ul').stop(true).slideToggle();
         });
 
         // all anchors with hash deny default click
@@ -48,16 +54,21 @@
         });
 
         $(scope.element).find('li > a').on('click', function () {
-            // #TODO: don't reset the current selection
-            // if (!scope.allowMultiple) {
-            $(scope.element).children('ul').find('ul').slideUp();
+            var self = $(this);
 
-            $(scope.element).children('ul').find('a').removeClass('open');
-            // }
+            if ($(this).attr('href') !== '#') {
+                if (!$(this).hasClass('open')) {
+                    $(this).addClass('open');
+                } else {
+                    $(this).removeClass('open');
+                }
+            }
 
-            $(this).siblings('ul').stop(true, true).slideToggle();
+            $(this).siblings('ul').stop(true).slideToggle();
 
-            $(this).addClass('open');
+            if (!scope.allowMultiple) {
+                // #TODO: finish
+            }
         });
     }
 
