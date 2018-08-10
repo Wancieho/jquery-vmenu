@@ -1,0 +1,77 @@
+.vMenu {
+    position: relative;
+    display: inline-block;
+    min-width: 100px;
+
+    >a {
+        width: 100%;
+        background: white;
+        border: 1px solid slategray;
+
+        &:hover{
+            background: #d2d8dd;
+        }
+    }
+    
+    >ul {
+        position: absolute;
+        display: none;
+        width: 140px;
+        background: white;
+        border: 1px solid #d2d8dd;
+    }
+    
+    >ul ul {
+        display: none;
+    }
+    
+    >ul {
+        >li {
+            >a {
+                background: #d2d8dd;
+            }
+        }
+    }
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    li {
+        border-top: 1px solid gray;
+    }
+    
+    a[href="#"] {
+        padding-right: 24px;
+        white-space: nowrap;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAJVJREFUSIntzjEOAUEYgNGn0HIB0TiAxCUUGoVSIhGNS4nEMTiF6DXiAKIjaEyyxVq7a4VivmSa+WfeDLHY31dL2etg/GKW1Q0r7N8dnOJeck3y/mZZAl/kxaGOTQF8/bxTqCZ2OfAtGkXxUBvHDPyAVlk81MM5BT+h+ykeGuCawC/oV4WH5okHZlXjoRGG38JjsR/1AKRiSlAjGl7BAAAAAElFTkSuQmCC');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    
+    a {
+        display: block;
+        padding: 3px;
+        text-decoration: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: black;
+        
+        &.open {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAJpJREFUSIntzr8KgVEch/EPYuUGFLNJuQqD3aCUweKeFLehXISYTbLL5t/ilPSm97yI4X3q2c55vj9ycv6eUuT7PlpYf+EWE1zvjj8d7+H8MHBC91PxDo4P8eAB7XfjDewT4sEd6lnjNWxexIMrVGPjFSxTxIMLlGMG5hHx4DRtfJQhHhw+xwoJA00MUEx70Z0LZthG/svJ+TU3Re5LM9qeXlQAAAAASUVORK5CYII=');
+        }
+        
+        &:focus {
+            color: black;
+        }
+        
+        &:hover {
+            background-color: #a8b3bd;
+            color: white;
+        }
+    }
+}

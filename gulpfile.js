@@ -1,9 +1,11 @@
 var del = require('del');
 var gulp = require('gulp');
-var concat = require('gulp-concat');
+var less = require('gulp-less');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var strip = require('gulp-strip-comments');
+var minify = require('gulp-clean-css');
+var rename = require('gulp-rename');
 var header = require('gulp-header');
 var browserSync = require('browser-sync');
 
@@ -29,6 +31,12 @@ gulp.task('jquery', function () {
 });
 
 gulp.task('build', function () {
+	gulp.src('source/less/vmenu.less')
+		.pipe(less())
+		.pipe(minify({ compatibility: 'ie8' }))
+		.pipe(rename('vmenu.min.css'))
+		.pipe(gulp.dest('dist/css'));
+
 	gulp.src('source/js/jquery.vmenu.js')
 		.pipe(strip())
 		.pipe(header(license))
